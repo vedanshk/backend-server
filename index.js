@@ -2,11 +2,21 @@ const express = require("express");
 
 const morgan = require("morgan");
 const router = require('./router');
+const mongoose = require('mongoose');
+
 const PORT = 4001;
 // app setup
 const app = express();
 
+
+
+//DB setup
+
+//mongoose.connect('mongdb://locahost:auth/auth');
+
+
 // adding body parser and logging middleware
+
 app.use(morgan("combined"));
 
 app.use(express.json({type: '*/*'}));
