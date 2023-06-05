@@ -3,7 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const router = require('./router');
 const mongoose = require('mongoose');
-
+const cors = require('cors');
 const PORT = 4001;
 // app setup
 const app = express();
@@ -18,7 +18,7 @@ const app = express();
 // adding body parser and logging middleware
 
 app.use(morgan("combined"));
-
+app.use(cors());
 app.use(express.json({type: '*/*'}));
 
 app.use(express.urlencoded({ extended: false }));
